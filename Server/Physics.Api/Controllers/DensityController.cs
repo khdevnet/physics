@@ -1,5 +1,4 @@
-﻿using Physics.Api.Application.Service;
-using Physics.Api.Application.Service.Entity;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +9,12 @@ using Physics.Api.Application;
 using System.Web.Http.Cors;
 using System.Web;
 using System.Web.Http.Routing;
+
 using Physics.Api.Models;
 using Physics.Api.Filters;
+
+using Physics.Domain.Service;
+using Physics.Domain;
 
 namespace Physics.Api.Controllers
 {

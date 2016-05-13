@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Physics.Api.Application.Storage
+namespace Physics.Domain.Repository
 {
     /// <summary>
     /// A hash table for mapping entitiy types to their lookup key properties. Used by data

@@ -1,12 +1,10 @@
 ﻿using Autofac;
 using Autofac.Core;
 using Autofac.Integration.WebApi;
-using Physics.Api.Application.PhysicsCalculator;
-using Physics.Api.Application.Service;
-using Physics.Api.Application.Service.Entity;
-using Physics.Api.Application.Service.Internal;
-using Physics.Api.Application.Storage;
-using Physics.Api.Application.Storage.Json;
+using Physics.Domain;
+using Physics.Domain.PhysicsCalculator;
+using Physics.Domain.Repository;
+using Physics.Domain.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;

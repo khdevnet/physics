@@ -1,5 +1,5 @@
 ﻿using System.IO;
-namespace Physics.Api.Application.Service
+namespace Physics.Domain.Service
 {
 	public interface IServices
 	{

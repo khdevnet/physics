@@ -1,4 +1,4 @@
-﻿namespace Physics.Api.Application.Service.Internal
+﻿namespace Physics.Domain.Service
 {
 	public class Services : IServices
 	{

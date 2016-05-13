@@ -1,11 +1,12 @@
-﻿using Physics.Api.Application.PhysicsCalculator;
-using Physics.Api.Application.Service.Entity;
-using Physics.Api.Application.Storage;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Physics.Api.Application.Service.Internal
+using Physics.Domain.Repository;
+using Physics.Domain.PhysicsCalculator;
+
+namespace Physics.Domain.Service
 {
     public class DensityService : IDensityService
     {

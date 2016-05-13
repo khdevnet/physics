@@ -47,3 +47,6 @@ D:\projects\git\Physics\Physics.UnitTests\bin\Debug\System.Web.WebPages.Deployme
 D:\projects\git\Physics\Physics.UnitTests\obj\Debug\Physics.UnitTests.csprojResolveAssemblyReference.cache
 D:\projects\git\Physics\Physics.UnitTests\obj\Debug\Physics.UnitTests.dll
 D:\projects\git\Physics\Physics.UnitTests\obj\Debug\Physics.UnitTests.pdb
+C:\projects\git\physics\Server\Physics.UnitTests\obj\Debug\Physics.UnitTests.csprojResolveAssemblyReference.cache
+C:\projects\git\physics\Server\Physics.UnitTests\obj\Debug\Physics.UnitTests.dll
+C:\projects\git\physics\Server\Physics.UnitTests\obj\Debug\Physics.UnitTests.pdb

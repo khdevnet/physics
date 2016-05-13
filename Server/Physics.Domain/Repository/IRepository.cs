@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Physics.Api.Application.Storage
+namespace Physics.Domain.Repository
 {
 	public interface IRepository
 	{

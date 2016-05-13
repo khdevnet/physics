@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Web;
-
-using Physics.Api.Application.Service.Entity;
 using Newtonsoft.Json;
 
+using Physics.Domain.Repository;
 
-
-namespace Physics.Api.Application.Storage.Json
+namespace Physics.JsonDataAccess
 {
     public class JsonRepository : IRepository
     {

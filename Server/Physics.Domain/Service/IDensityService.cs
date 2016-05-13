@@ -1,7 +1,7 @@
-﻿using Physics.Api.Application.Service.Entity;
+﻿
 using System.Collections.Generic;
 
-namespace Physics.Api.Application.Service
+namespace Physics.Domain.Service
 {
     public interface IDensityService
     {

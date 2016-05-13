@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Physics.Api.Application.PhysicsCalculator
+namespace Physics.Domain.PhysicsCalculator
 {
     public class PhysicsCalculator : IPhysicsCalculator
     {

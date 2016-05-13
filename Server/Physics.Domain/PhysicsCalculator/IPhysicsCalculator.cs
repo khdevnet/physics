@@ -1,7 +1,6 @@
-﻿using Physics.Api.Application.Service.Entity;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Physics.Api.Application.PhysicsCalculator
+namespace Physics.Domain.PhysicsCalculator
 {
     public interface IPhysicsCalculator
     {

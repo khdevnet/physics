@@ -1,4 +1,4 @@
-﻿namespace Physics.Api.Application.Service.Entity
+﻿namespace Physics.Domain
 {
 
     public class Density

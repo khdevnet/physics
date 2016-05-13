@@ -64,3 +64,6 @@ D:\projects\git\Physics\Physics.Api\obj\Debug\Physics.Api.csprojResolveAssemblyR
 D:\projects\git\Physics\Physics.Api\bin\System.Web.Cors.dll
 D:\projects\git\Physics\Physics.Api\bin\System.Web.Http.Cors.dll
 D:\projects\git\Physics\Physics.Api\bin\System.Web.Http.Cors.xml
+C:\projects\git\physics\Server\Physics.Api\obj\Debug\Physics.Api.csprojResolveAssemblyReference.cache
+C:\projects\git\physics\Server\Physics.Api\obj\Debug\Physics.Api.dll
+C:\projects\git\physics\Server\Physics.Api\obj\Debug\Physics.Api.pdb
