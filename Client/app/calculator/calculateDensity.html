@@ -1,0 +1,31 @@
+﻿
+<div class="row">
+    <div class="col-lg-12">
+       <h1 class="page-header"  > Calculate Density (kilogram / meter <sup>3</sup>)</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-6">
+        <table data-ng-class="{ 'hide' : vm.result!=='' }" class="numeq" cellspacing="0"><tbody><tr><td class="eqN"><span class="numberline">1.</span></td><td><div class="eq"> ρ<em>=</em><table class="tfrac"><tbody><tr><td><div class="dtop">m</div><div class="dbot">V</div></td></tr></tbody></table> </div></td></tr></tbody></table>
+        <table data-ng-class="{ 'hide' : vm.result==='' }" class="numeq" cellspacing="0"><tbody><tr><td class="eqN"><span class="numberline">1.</span></td><td><div class="eq"> {{vm.result}}<em>=</em><table class="tfrac"><tbody><tr><td><div class="dtop">{{vm.options.weight}}</div><div class="dbot">{{vm.options.volume}}</div></td></tr></tbody></table> </div></td></tr></tbody></table>
+       
+         <form role="form" name="formDensity" novalidate>
+          
+            <p></p>
+            <div class="form-group" data-ng-class="{ 'has-error' : formDensity.weight.$invalid && !formDensity.weight.$pristine }">
+                <label>m (kilogram)</label>
+                <input data-ng-model="vm.options.weight" class="form-control" name="weight"  placeholder="Enter Mass" type="number" required>
+            </div>
+            <div class="form-group" data-ng-class="{ 'has-error' : formDensity.volume.$invalid && !formDensity.volume.$pristine }">
+                <label>V (meter <sup>3</sup>)</label>
+                <input data-ng-model="vm.options.volume" class="form-control" type="number" name="volume"  placeholder="Enter volume" required>
+            </div>
+            <button data-ng-click="vm.calculate()" data-ng-disabled="formDensity.$invalid" type="submit" class="btn btn-default">Calculate</button>
+        </form>
+       
+    </div>
+    <!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->
