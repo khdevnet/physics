@@ -1,32 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Physics.Api", "Physics.Api\Physics.Api.csproj", "{EB375C79-116E-4F29-BA39-6AABB1F93833}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Physics.UnitTests", "Physics.UnitTests\Physics.UnitTests.csproj", "{16C7A74E-3948-4622-8289-222DBC994E74}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Physics.WebUI(1)", "Physics.WebUI\", "{9711F0B1-E6C9-4ABF-BEB6-14CC80D19B90}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_54012"
-		Debug.AspNetCompiler.PhysicalPath = "Physics.WebUI\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54012\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_54012"
-		Release.AspNetCompiler.PhysicalPath = "Physics.WebUI\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54012\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "54012"
-		SlnRelativePath = "Physics.WebUI\"
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +21,6 @@ Global
 		{16C7A74E-3948-4622-8289-222DBC994E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16C7A74E-3948-4622-8289-222DBC994E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16C7A74E-3948-4622-8289-222DBC994E74}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9711F0B1-E6C9-4ABF-BEB6-14CC80D19B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9711F0B1-E6C9-4ABF-BEB6-14CC80D19B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9711F0B1-E6C9-4ABF-BEB6-14CC80D19B90}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{9711F0B1-E6C9-4ABF-BEB6-14CC80D19B90}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
