@@ -1,31 +1,29 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using Physics.Api.Application;
-using System.Web.Http.Cors;
 using System.Web;
 using System.Web.Http.Routing;
+using System.Threading.Tasks;
 
 using Physics.Api.Models;
 using Physics.Api.Filters;
 
 using Physics.Domain.Service;
 using Physics.Domain;
-using System.Threading.Tasks;
+
+
+
+
 
 namespace Physics.Api.Controllers
 {
     [RoutePrefix("api")]
     public class DensityController : BaseController
     {
-        public DensityController(IServices services) : base(services)
-        {
-        }
         const int maxPageSize = 5;
+
+        public DensityController(IServices services) : base(services) { }
 
         [Route("density", Name = "DensityList")]
         [HeaderAllowPaginationFilter()]
@@ -42,17 +40,20 @@ namespace Physics.Api.Controllers
                      .Skip(pagination.PageSize * (pagination.CurrentPage - 1))
                      .Take(pagination.PageSize).Select(density => density.ToViewModel());
         }
+
         [Route("density/weight/{weight}/volume/{volume}")]
         public async Task<DensityViewModel> Get(float weight, float volume)
         {
             return await Services.Density.GetByWeightAndVolumeAsync(weight, volume).ToViewModelAync();
         }
+
         [Route("density/{id}")]
         public async Task<DensityViewModel> Get(string id)
         {
             if (!Services.Density.Exists(id)) throw new HttpResponseException(HttpStatusCode.NotFound);
             return await Services.Density.GetByIdAsync(id).ToViewModelAync();
         }
+
         [HttpPost]
         [Route("density")]
         public async Task<IHttpActionResult> Post([FromBody]DensityViewModel density)
@@ -61,6 +62,7 @@ namespace Physics.Api.Controllers
             await Services.Density.SaveAsync(density.ToDomainModel());
             return Ok();
         }
+
         [HttpPut]
         [Route("density/{id}")]
         public async Task<IHttpActionResult> Put(string id, [FromBody]DensityViewModel density)
@@ -69,6 +71,7 @@ namespace Physics.Api.Controllers
             await Services.Density.SaveAsync(density.ToDomainModel());
             return Ok();
         }
+
         [HttpDelete]
         [Route("density/{id}")]
         public async Task<IHttpActionResult> Delete(string id)
