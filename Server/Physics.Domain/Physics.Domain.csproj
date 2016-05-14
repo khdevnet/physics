@@ -52,8 +52,6 @@
     <Compile Include="PhysicsCalculator\PhysicsCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IDensityRepository.cs" />
-    <Compile Include="Repository\RepositoryExceptions.cs" />
-    <Compile Include="Repository\RepositoryKeys.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Physics.Domain
+﻿namespace Physics.Domain
 {
     public interface IPhysicsCalculator
     {

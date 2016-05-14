@@ -1,25 +1,21 @@
-﻿using Autofac;
-using Autofac.Configuration;
-using Autofac.Configuration.Core;
-using Autofac.Core;
+﻿using System.Reflection;
+using System.Web.Http;
 
+using Autofac;
+using Autofac.Configuration;
+using Autofac.Core;
 using Autofac.Integration.WebApi;
+
 using Physics.Domain;
 using Physics.Domain.Repository;
 using Physics.Domain.Service;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Reflection;
-using System.Web;
-using System.Web.Http;
 
 namespace Physics.Api.App_Start
 {
     public static class AutofacContainer
     {
         const string REPOSITORY_TYPE = "JSON";
+
         public static void Build()
         {
             var builder = new ContainerBuilder();
@@ -36,6 +32,7 @@ namespace Physics.Api.App_Start
             builder.RegisterModule(new ConfigurationSettingsReader("dataAccessSection"));
 
             builder.RegisterType<PhysicsCalculator>().Named<IPhysicsCalculator>("physicsCalculator").InstancePerLifetimeScope();
+
             builder.RegisterType<CalculatorService>().Named<ICalculatorService>("calculatorService")
                 .InstancePerLifetimeScope()
                 .WithParameter(GetResolvedParameterByName<IPhysicsCalculator>("physicsCalculator"));
@@ -55,12 +52,7 @@ namespace Physics.Api.App_Start
             var container = builder.Build();
 
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
-
         }
-
-
-        
-
 
         private static ResolvedParameter GetResolvedParameterByName<T>(string key)
         {
@@ -68,5 +60,6 @@ namespace Physics.Api.App_Start
                 (pi, c) => pi.ParameterType == typeof(T),
                 (pi, c) => c.ResolveNamed<T>(key));
         }
+
     }
 }

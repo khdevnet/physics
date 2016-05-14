@@ -1,9 +1,5 @@
-﻿using System;
-using Physics.Domain.Repository;
-
-namespace Physics.Domain
+﻿namespace Physics.Domain
 {
-
     public class Density
     {
         public string Id { get; set; }

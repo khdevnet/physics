@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Physics.Domain
 {
@@ -30,9 +27,9 @@ namespace Physics.Domain
             var weight = density * volume;
             return RoundToKilograms(weight);
         }
+
         private float RoundToKilograms(float weight) {
             return (float)Math.Round((double)weight, 4);
         }
-      
     }
 }

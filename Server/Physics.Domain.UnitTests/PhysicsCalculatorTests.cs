@@ -6,7 +6,6 @@ namespace Physics.Domain.UnitTests
     [TestClass]
     public class PhysicsCalculatorTests
     {
-
         [TestMethod]
         public void CalculateDensity_CalculateWithValidAluminiumOptions_ResultValue2720()
         {
@@ -27,6 +26,7 @@ namespace Physics.Domain.UnitTests
             Assert.AreEqual(aluminiumObject.Density, actualDensity);
 
         }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "volume should be greater then 0")]
         public void CalculateDensity_CalculateWithInValidAluminiumVolumeOptions_ThrowArgumentException()
@@ -37,6 +37,7 @@ namespace Physics.Domain.UnitTests
             Assert.AreEqual(aluminiumObject.Density, actualDensity);
 
         }
+
         [TestMethod]
         public void CalculateVolume_CalculateWithValidAluminiumOptions_ResultValue000002()
         {
@@ -45,6 +46,7 @@ namespace Physics.Domain.UnitTests
             var actualVolume = calculator.CalculateVolume(density: aluminiumObject.Density, weight: aluminiumObject.Weight);
             Assert.AreEqual(aluminiumObject.Volume, actualVolume);
         }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "density should be greater then 0")]
         public void CalculateVolume_CalculateWithInvalidAluminiumDensityOption_ThrowArgumentException()
@@ -54,6 +56,7 @@ namespace Physics.Domain.UnitTests
             var actualVolume = calculator.CalculateVolume(density: aluminiumObject.Density, weight: aluminiumObject.Weight);
             Assert.AreEqual(aluminiumObject.Volume, actualVolume);
         }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "weight should be greater then 0")]
         public void CalculateVolume_CalculateWithInvalidAluminiumWeightOption_ThrowArgumentException()
@@ -63,6 +66,7 @@ namespace Physics.Domain.UnitTests
             var actualVolume = calculator.CalculateVolume(density: aluminiumObject.Density, weight: aluminiumObject.Weight);
             Assert.AreEqual(aluminiumObject.Volume, actualVolume);
         }
+
         [TestMethod]
         public void CalculateWeight_CalculateWithValidAluminiumOptions_ResultValueIs00544()
         {
@@ -71,6 +75,7 @@ namespace Physics.Domain.UnitTests
             var actualWeight = calculator.CalculateWeight(density: aluminiumObject.Density, volume: aluminiumObject.Volume);
             Assert.AreEqual(aluminiumObject.Weight, actualWeight);
         }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "density should be greater then 0")]
         public void CalculateWeight_CalculateWithInvalidAluminiumDensityOption_ThrowArgumentException()
@@ -79,6 +84,7 @@ namespace Physics.Domain.UnitTests
             var aluminiumObject = new ObjectsFactory().AluminiumObject().WithInvalidDensity().Build();
             var actualWeight = calculator.CalculateWeight(density: aluminiumObject.Density, volume: aluminiumObject.Volume);
         }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "volume should be greater then 0")]
         public void CalculateWeight_CalculateWithInvalidAluminiumVolumeOption_ThrowArgumentException()
@@ -87,10 +93,10 @@ namespace Physics.Domain.UnitTests
             var aluminiumObject = new ObjectsFactory().AluminiumObject().WithInvalidVolume().Build();
             var actualWeight = calculator.CalculateWeight(density: aluminiumObject.Density, volume: aluminiumObject.Volume);
         }
+
         PhysicsCalculator GetCalculator()
         {
             return new PhysicsCalculator();
         }
-
     }
 }

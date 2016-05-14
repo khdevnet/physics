@@ -23,26 +23,30 @@ namespace Physics.Domain.Service
         {
             return _repository.All<Density>().ToList();
         }
+
         public Task<List<Density>> GetAllAsync()
         {
             return Task.Run(() => this.GetAll());
         }
+
         public void Save(Density density)
         {
             if (!Valid(density)) throw new ArgumentException("Density not valid!!");
             bool isItNewDensity = string.IsNullOrWhiteSpace(density.Id);
             if (isItNewDensity) density.Id = GenerateNewId(density.Title);
-
             _repository.Save(density);
         }
+
         public Task SaveAsync(Density density)
         {
             return Task.Run(() => this.Save(density));
         }
+
         string GenerateNewId(string title)
         {
             return title.ToLower().Replace(' ', '-');
         }
+
         bool Valid(Density density)
         {
             return !string.IsNullOrWhiteSpace(density.Title) && density.Value > 0;
@@ -75,8 +79,6 @@ namespace Physics.Domain.Service
             if (density == null) return new Density() { Value = densityValue };
             return density;
         }
-
-
 
         public Task<Density> GetByWeightAndVolumeAsync(float weight, float volume)
         {

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Physics.Domain.Repository
+﻿namespace Physics.Domain.Repository
 {
     public interface IDensityRepository: IRepository
     {
