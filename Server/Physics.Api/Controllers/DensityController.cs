@@ -15,6 +15,7 @@ using Physics.Api.Filters;
 
 using Physics.Domain.Service;
 using Physics.Domain;
+using System.Threading.Tasks;
 
 namespace Physics.Api.Controllers
 {
@@ -26,50 +27,54 @@ namespace Physics.Api.Controllers
         }
         const int maxPageSize = 5;
 
-        [Route("density", Name = "densityList")]
+        [Route("density", Name = "DensityList")]
         [HeaderAllowPaginationFilter()]
-        public IEnumerable<Density> Get(int page = 1, int pageSize = maxPageSize)
+        public async Task<IEnumerable<DensityViewModel>> Get(int page = 1, int pageSize = maxPageSize)
         {
-            var densities = Services.Density.GetAll();
+            var densities = await Services.Density.GetAllAsync();
             var urlHelper = new UrlHelper(Request);
 
-            var pagination = new Pagination<Density>(densities, page, pageSize, urlHelper.Link, "densityList");
+            var pagination = new Pagination<Density>(densities, page, pageSize, urlHelper.Link, "DensityList");
 
             HttpContext.Current.Response.Headers.Add("X-Pagination", pagination.ToJson());
-            
+
             return densities
                      .Skip(pagination.PageSize * (pagination.CurrentPage - 1))
-                     .Take(pagination.PageSize);
+                     .Take(pagination.PageSize).Select(density => density.ToViewModel());
         }
         [Route("density/weight/{weight}/volume/{volume}")]
-        public Density Get(decimal weight, decimal volume)
+        public async Task<DensityViewModel> Get(float weight, float volume)
         {
-            return Services.Density.GetByWeightAndVolume(weight, volume);
+            return await Services.Density.GetByWeightAndVolumeAsync(weight, volume).ToViewModelAync();
         }
-        [Route("density")]
-        public Density Get(string id)
+        [Route("density/{id}")]
+        public async Task<DensityViewModel> Get(string id)
         {
             if (!Services.Density.Exists(id)) throw new HttpResponseException(HttpStatusCode.NotFound);
-            return Services.Density.GetById(id);
+            return await Services.Density.GetByIdAsync(id).ToViewModelAync();
         }
         [HttpPost]
-        [Route("density", Name = "addDensity")]
-        public void Post([FromBody]Density density)
+        [Route("density")]
+        public async Task<IHttpActionResult> Post([FromBody]DensityViewModel density)
         {
-            if (!ModelState.IsValid) BadRequest(ModelState);
-            Services.Density.Save(density);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            await Services.Density.SaveAsync(density.ToDomainModel());
+            return Ok();
         }
         [HttpPut]
-        public void Put(string id, [FromBody]Density density)
+        [Route("density/{id}")]
+        public async Task<IHttpActionResult> Put(string id, [FromBody]DensityViewModel density)
         {
-            if (!ModelState.IsValid) BadRequest(ModelState);
-            Services.Density.Save(density);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            await Services.Density.SaveAsync(density.ToDomainModel());
+            return Ok();
         }
-        [Route("density")]
         [HttpDelete]
-        public void Delete(string id)
+        [Route("density/{id}")]
+        public async Task<IHttpActionResult> Delete(string id)
         {
-            Services.Density.Delete(id);
+            await Services.Density.DeleteAsync(id);
+            return Ok();
         }
     }
 }

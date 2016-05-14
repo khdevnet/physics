@@ -3,29 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Physics.Domain.PhysicsCalculator
+namespace Physics.Domain
 {
     public class PhysicsCalculator : IPhysicsCalculator
     {
-        public decimal CalculateDensity(decimal weight, decimal volume)
+        public float CalculateDensity(float weight, float volume)
         {
             if (volume <= 0) throw new ArgumentException("volume should be greater then 0");
             if (weight <= 0) throw new ArgumentException("weight should be greater then 0");
-            return weight / volume;
+            var density = weight / volume;
+            return density;
         }
 
-        public decimal CalculateVolume(decimal density, decimal weight)
+        public float CalculateVolume(float density, float weight)
         {
             if (density <= 0) throw new ArgumentException("density should be greater then 0");
             if (weight <= 0) throw new ArgumentException("weight should be greater then 0");
-            return weight / density;
+            var volume = weight / density;
+            return volume;
         }
 
-        public decimal CalculateWeight(decimal density, decimal volume)
+        public float CalculateWeight(float density, float volume)
         {
             if (density <= 0) throw new ArgumentException("density should be greater then 0");
             if (volume <= 0) throw new ArgumentException("volume should be greater then 0");
-            return density * volume;
+            var weight = density * volume;
+            return RoundToKilograms(weight);
         }
+        private float RoundToKilograms(float weight) {
+            return (float)Math.Round((double)weight, 4);
+        }
+      
     }
 }

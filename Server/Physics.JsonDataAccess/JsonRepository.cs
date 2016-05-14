@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Web;
-using Newtonsoft.Json;
 
+using Newtonsoft.Json;
 using Physics.Domain.Repository;
+using Physics.JsonDataAccess.Entity;
 
 namespace Physics.JsonDataAccess
 {
     public class JsonRepository : IRepository
     {
-        private readonly RepositoryKeys _keys;
 
         public string DataPath
         {
@@ -21,21 +21,31 @@ namespace Physics.JsonDataAccess
         }
 
 
-        public JsonRepository(RepositoryKeys keys)
-        {
-            _keys = keys;
-        }
-
-
         public TEntity Single<TEntity>(object key) where TEntity : class, new()
         {
+
             var filename = key.ToString();
             var recordPath = Path.Combine(DataPath, typeof(TEntity).Name, filename + ".json");
             var json = File.ReadAllText(recordPath);
             var item = JsonConvert.DeserializeObject<TEntity>(json);
             return item;
-        }
 
+        }
+        public TEntity SingleOrDefault<TEntity>(object key, TEntity defaultValue) where TEntity : class, new()
+        {
+            if (defaultValue == null) throw new ArgumentNullException("The defaultValue can't be NULL");
+
+            TEntity value;
+            try
+            {
+                value = this.Single<TEntity>(key);
+            }
+            catch (FileNotFoundException)
+            {
+                value = defaultValue;
+            }
+            return value;
+        }
 
         public IEnumerable<TEntity> All<TEntity>() where TEntity : class, new()
         {
@@ -54,13 +64,13 @@ namespace Physics.JsonDataAccess
         }
 
 
-        public void Save<TEntity>(TEntity item) where TEntity : class, new()
+        public void Save<TEntity>(TEntity item) where TEntity : class, IBaseEntity<TEntity>, new()
         {
             var json = JsonConvert.SerializeObject(item, Formatting.Indented);
             var folderPath = GetEntityPath<TEntity>();
             if (!Directory.Exists(folderPath)) { Directory.CreateDirectory(folderPath); }
 
-            var filename = _keys.GetKeyValue(item);
+            var filename = item.GetPrimaryKeyValue();
             var recordPath = Path.Combine(folderPath, filename + ".json");
 
             File.WriteAllText(recordPath, json);
@@ -98,5 +108,7 @@ namespace Physics.JsonDataAccess
         {
             return Path.Combine(DataPath, typeof(TEntity).Name);
         }
+
+
     }
 }

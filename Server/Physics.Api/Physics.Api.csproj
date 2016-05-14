@@ -48,6 +48,10 @@
       <HintPath>..\packages\Autofac.3.5.0\lib\net40\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Autofac.Configuration, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Configuration.3.3.0\lib\net40\Autofac.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Autofac.Integration.WebApi, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
       <Private>True</Private>
@@ -210,6 +214,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DensityViewModel.cs" />
     <Compile Include="Models\VolumeParameters.cs" />
     <Compile Include="Models\WeightParameters.cs" />
     <Compile Include="Models\DensityParameters.cs" />

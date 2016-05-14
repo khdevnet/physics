@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Physics.Domain.PhysicsCalculator;
 
 namespace Physics.Domain.Service
 {

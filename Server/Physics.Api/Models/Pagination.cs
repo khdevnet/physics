@@ -31,7 +31,7 @@ namespace Physics.Api.Models
         {
             get
             {
-                return (int)Math.Ceiling((double)this.TotalCount / this.PageSize);
+                return (int)Math.Ceiling((float)this.TotalCount / this.PageSize);
             }
         }
         public string PreviousPageLink { get { return getPreviousLink(); } }

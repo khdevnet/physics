@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 
-namespace Physics.Domain.PhysicsCalculator
+namespace Physics.Domain
 {
     public interface IPhysicsCalculator
     {
-        decimal CalculateDensity(decimal weight, decimal volume);
-        decimal CalculateWeight(decimal density, decimal volume);
-        decimal CalculateVolume(decimal density, decimal weight);
+        float CalculateDensity(float weight, float volume);
+        float CalculateWeight(float density, float volume);
+        float CalculateVolume(float density, float weight);
     }
 }

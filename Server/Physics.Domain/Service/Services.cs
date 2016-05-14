@@ -4,7 +4,6 @@
 	{
 		public Services(IDensityService densityService, ICalculatorService calculatorService)
 		{
-
             Density = densityService;
             Calculator = calculatorService;
         }

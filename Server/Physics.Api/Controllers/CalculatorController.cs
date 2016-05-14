@@ -24,7 +24,7 @@ namespace Physics.Api.Controllers
 
         [HttpPost]
         [Route("calculate/density", Name = "CalcDensity")]
-        public decimal Density([FromBody]DensityParameters parameters)
+        public float Density([FromBody]DensityParameters parameters)
         {
             if (!ModelState.IsValid) BadRequest(ModelState);
             return Services.Calculator.Physics.CalculateDensity(parameters.Weight, parameters.Volume);
@@ -32,7 +32,7 @@ namespace Physics.Api.Controllers
         }
         [HttpPost]
         [Route("calculate/weight", Name = "CalcWeight")]
-        public decimal Weight([FromBody]WeightParameters parameters)
+        public float Weight([FromBody]WeightParameters parameters)
         {
             if (!ModelState.IsValid) BadRequest(ModelState);
             return Services.Calculator.Physics.CalculateWeight(parameters.Density, parameters.Volume);
@@ -40,7 +40,7 @@ namespace Physics.Api.Controllers
         }
         [HttpPost]
         [Route("calculate/volume", Name = "CalcVolume")]
-        public decimal Volume([FromBody]VolumeParameters parameters)
+        public float Volume([FromBody]VolumeParameters parameters)
         {
             if (!ModelState.IsValid) BadRequest(ModelState);
             return Services.Calculator.Physics.CalculateVolume(parameters.Density, parameters.Weight);

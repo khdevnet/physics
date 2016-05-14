@@ -6,8 +6,8 @@
     <ProjectGuid>{16C7A74E-3948-4622-8289-222DBC994E74}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Physics.UnitTests</RootNamespace>
-    <AssemblyName>Physics.UnitTests</AssemblyName>
+    <RootNamespace>Physics.Domain.UnitTests</RootNamespace>
+    <AssemblyName>Physics.Domain.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,15 +50,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ObjectOptionsFactory.cs" />
+    <Compile Include="ObjectsFactory.cs" />
     <Compile Include="PhysicsCalculatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Physics.Api\Physics.Api.csproj">
-      <Project>{eb375c79-116e-4f29-ba39-6aabb1f93833}</Project>
-      <Name>Physics.Api</Name>
+    <ProjectReference Include="..\Physics.Domain\Physics.Domain.csproj">
+      <Project>{f726bbb1-3fa1-44b7-b8b4-9e78b88d2701}</Project>
+      <Name>Physics.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
