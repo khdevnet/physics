@@ -1,0 +1,26 @@
+{
+  "name": "anton",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "anton"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.5.5",
+    "angular-route": "~1.5.5",
+    "angular-mocks": "~1.5.5",
+    "bootstrap": "~3.3.6",
+    "raphael": "~2.2.0",
+    "metisMenu": "~2.5.2",
+    "components-font-awesome": "~4.5.0"
+  }
+}

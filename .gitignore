@@ -1,0 +1,7 @@
+/Backend/packages
+/Backend/TestResults
+/Backend/.vs
+/Frontend/.tmp
+/Frontend/bower_components
+/Frontend/build
+/Frontend/node_modules

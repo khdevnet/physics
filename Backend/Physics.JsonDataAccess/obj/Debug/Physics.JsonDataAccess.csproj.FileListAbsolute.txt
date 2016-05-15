@@ -1,0 +1,11 @@
+D:\projects\git\physics\Server\Physics.JsonDataAccess\obj\Debug\Physics.JsonDataAccess.csprojResolveAssemblyReference.cache
+D:\projects\git\physics\Server\Physics.JsonDataAccess\bin\Debug\Physics.JsonDataAccess.dll
+D:\projects\git\physics\Server\Physics.JsonDataAccess\bin\Debug\Physics.JsonDataAccess.pdb
+D:\projects\git\physics\Server\Physics.JsonDataAccess\bin\Debug\Newtonsoft.Json.dll
+D:\projects\git\physics\Server\Physics.JsonDataAccess\bin\Debug\Physics.Domain.dll
+D:\projects\git\physics\Server\Physics.JsonDataAccess\bin\Debug\Physics.Domain.pdb
+D:\projects\git\physics\Server\Physics.JsonDataAccess\bin\Debug\Newtonsoft.Json.xml
+D:\projects\git\physics\Server\Physics.JsonDataAccess\obj\Debug\Physics.JsonDataAccess.dll
+D:\projects\git\physics\Server\Physics.JsonDataAccess\obj\Debug\Physics.JsonDataAccess.pdb
+D:\projects\git\physics\Server\Physics.Api\bin\Physics.JsonDataAccess.dll
+D:\projects\git\physics\Server\Physics.Api\bin\Physics.JsonDataAccess.pdb

@@ -1,0 +1,9 @@
+D:\projects\git\physics\Server\Physics.Domain\bin\Debug\Physics.Domain.dll
+D:\projects\git\physics\Server\Physics.Domain\bin\Debug\Physics.Domain.pdb
+D:\projects\git\physics\Server\Physics.Domain\obj\Debug\Physics.Domain.dll
+D:\projects\git\physics\Server\Physics.Domain\obj\Debug\Physics.Domain.pdb
+D:\projects\git\physics\Backend\Physics.Domain\bin\Debug\Physics.Domain.dll
+D:\projects\git\physics\Backend\Physics.Domain\bin\Debug\Physics.Domain.pdb
+D:\projects\git\physics\Backend\Physics.Domain\obj\Debug\Physics.Domain.csprojResolveAssemblyReference.cache
+D:\projects\git\physics\Backend\Physics.Domain\obj\Debug\Physics.Domain.dll
+D:\projects\git\physics\Backend\Physics.Domain\obj\Debug\Physics.Domain.pdb
